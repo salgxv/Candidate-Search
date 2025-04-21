@@ -1,31 +1,30 @@
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './index.css';
-
-import App from './App.tsx';
-import CandidateSearch from './pages/CandidateSearch.tsx';
-import SavedCandidates from './pages/SavedCandidates.tsx';
-import ErrorPage from './pages/ErrorPage.tsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App";
+import CandidateSearch from "./pages/CandidateSearch";
+import SavedCandidates from "./pages/SavedCandidates";
+import "./index.css";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
+        path: "/",
         element: <CandidateSearch />,
       },
       {
-        path: '/SavedCandidates',
+        path: "/saved",
         element: <SavedCandidates />,
       },
     ],
   },
 ]);
 
-const rootElement = document.getElementById('root');
-if (rootElement) {
-  ReactDOM.createRoot(rootElement).render(<RouterProvider router={router} />);
-}
+ReactDOM.createRoot(document.getElementById("root")!).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
