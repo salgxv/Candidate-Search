@@ -1,7 +1,5 @@
 console.log("Token (from import.meta.env):", import.meta.env.VITE_GITHUB_TOKEN);
 
-const token = import.meta.env.VITE_GITHUB_TOKEN;
-
 const searchGithub = async () => {
   try {
     const token = import.meta.env.VITE_GITHUB_TOKEN;
