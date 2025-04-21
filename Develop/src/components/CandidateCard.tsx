@@ -18,9 +18,9 @@ const CandidateCard: React.FC<CandidateCardProps> = ({ candidate, onAdd, onIgnor
       <p>Email: <a href={`mailto:${candidate.email}`}>{candidate.email}</a></p>
       <p>Company: {candidate.company}</p>
       <div className="candidate-actions">
-        <FaMinusCircle className="redButton" onClick={onIgnore} />
-        <FaPlusCircle className="greenButton" onClick={onAdd} />
-      </div>
+  {onIgnore && <FaMinusCircle className="redButton" onClick={onIgnore} />}
+  {onAdd && <FaPlusCircle className="greenButton" onClick={onAdd} />}
+</div>
     </div>
   );
 };
