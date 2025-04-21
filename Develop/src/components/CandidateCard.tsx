@@ -2,6 +2,7 @@ import React from 'react';
 import CandidateDetails from '../interfaces/Candidate.interface';
 import { FaPlusCircle, FaMinusCircle } from "react-icons/fa";
 
+
 interface CandidateCardProps {
     candidate: CandidateDetails;
     onAdd: () => void;
