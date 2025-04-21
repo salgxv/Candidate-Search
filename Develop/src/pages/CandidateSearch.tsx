@@ -1,5 +1,6 @@
 import { Candidate } from "../interfaces/Candidate.interface";
 import { searchGithub, searchGithubUser } from "../api/API";
+import { useState, useEffect } from "react";
 
 const CandidateSearch = () => {
   const [candidates, setCandidates] = useState<Candidate[]>([]);
